@@ -1,5 +1,5 @@
 {
-  "name": "VKRKJ-First-Project",
+  "name": "taskShark",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -10,15 +10,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/CodeWithYourHeart/VKRKJ-First-Project.git"
+    "url": "git+https://github.com/CodeWithYourHeart/taskShark.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/CodeWithYourHeart/VKRKJ-First-Project/issues"
+    "url": "https://github.com/CodeWithYourHeart/taskShark/issues"
   },
-  "homepage": "https://github.com/CodeWithYourHeart/VKRKJ-First-Project#readme",
+  "homepage": "https://github.com/CodeWithYourHeart/taskShark#readme",
   "dependencies": {
     "@babel/preset-react": "^7.12.13",
     "concurrently": "^5.3.0",
