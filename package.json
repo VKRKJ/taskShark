@@ -4,8 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "node server/server.js",
     "dev": "webpack serve --mode development --open --hot",
-    "build" : "webpack --mode production"
+    "build": "webpack --mode production"
   },
   "repository": {
     "type": "git",
@@ -26,6 +27,7 @@
     "express": "^4.17.1",
     "html-webpack-plugin": "^5.1.0",
     "nodemon": "^2.0.7",
+    "pg": "^8.5.1",
     "react": "^17.0.1",
     "react-beautiful-dnd": "^13.0.0",
     "react-dom": "^17.0.1",
