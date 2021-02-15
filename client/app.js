@@ -1,9 +1,6 @@
 import React, { Component } from 'react';
-import { DragDropContext } from 'react-beautiful-dnd';
-import Column from './column.js';
-// import './stylesheet/styles.css';
-
-
+import Column from './column';
+import './stylesheet/styles.css';
 
 class App extends Component {
   constructor(props) {
@@ -62,24 +59,9 @@ class App extends Component {
         <Column className="Done"/>
         </div>
       </div>
+
     );
   }
 }
-
-
-// class Board extends Component {
-   
-//   render (){
-   
-
-
-
-
-//     return(
-//       <div style: 
-
-//     )
-//   }
-// }
 
 export default App;
