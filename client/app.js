@@ -12,10 +12,29 @@ class App extends Component {
   }
 
   componentDidMount() {
-    fetch('/')
-      .then((res) => res.json())
-      .then((data) => this.setState({ enteredData: enteredData.concat(data) }))
-      .catch((err) => console.log('DATA FETCH ERROR'));
+    
+    // var requestOptions = {
+    //   // mode: 'no-cors',
+    //   method: 'GET',
+    //   redirect: 'follow'
+    // };
+    
+    fetch("/routes/tickets")
+      .then(data => data.json())
+      .then(data => console.log('THIS IS THE DATA WE ARE GETTING BACK -------->', data))
+      // .then(response => response.text())
+      // .then(result => console.log('resit;',result))
+      .catch(error => console.log('error in APP.jS FETCH REQUEST ====>', error));
+  
+
+
+    // console.log("component did mount");
+    // fetch('http://localhost:3000/routes')
+    // .then((res) => console.log('RES.BODY IS HERE ->>>>>', res.body));
+    //   // .then((res) => res.json())
+    //   // .then((res) => console.log(res));
+    //   // .then((data) => this.setState({ enteredData: enteredData.concat(data) }))
+    //   // .catch((err) => console.log('DATA FETCH ERROR'));
   }
 
 

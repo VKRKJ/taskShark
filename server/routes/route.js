@@ -8,13 +8,14 @@ router.post('/create',
   ticketController.addTicket,
   ticketController.getAll,
   (req, res) => {
-    res.status(200).send(res.locals.tickets);
+    res.status(200).json(res.locals.tickets);
   });
 
-router.get('/',
+router.get('/tickets',
   ticketController.getAll,
   (req, res) => {
-    res.status(200).send(res.locals.tickets);
+    // console.log('ROUTER.GET res.locals.tickets ---------->', res.locals.tickets);
+    res.status(200).json(res.locals.tickets);
   });
 
 module.exports = router;

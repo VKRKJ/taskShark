@@ -10,6 +10,8 @@ class Column extends Component {
     }
      this.addItem = this.addItem.bind(this)
   } 
+
+
   addItem(e) {
     if (this._inputElement.value !== "") {
       var newItem = {
@@ -38,10 +40,10 @@ class Column extends Component {
           <input className="name" type="text" placeholder="add your Name here" />
           {/* /storing a reference to our input element in the appropriately named _inputElement property */}
           <input className="task" type="text" placeholder="add your task here" ref={(a)=> this._inputElement = a}  />
-          <button className="button"  >add Ticket</button>
+          <button className="button">add Ticket</button>
           </form>
           </div>
-          <EachTask entires={this.state.input}/>
+          {/* <EachTask entires={this.state.input}/> */}
       </div>
 
     );
