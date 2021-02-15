@@ -14,6 +14,7 @@ module.exports = {
     filename: 'bundle.js',
   },
   devtool: 'eval-source-map',
+  // devtool: 'inline-source-map',
   mode: 'production',
   devServer: {
     host: 'localhost',
@@ -29,7 +30,8 @@ module.exports = {
 
     inline: true,
 
-    headers: { 'Access-Control-Allow-Origin': '*' },
+    headers: 
+    { 'Access-Control-Allow-Origin': '*' },
 
     /**
      * proxy is required in order to make api calls to
@@ -38,14 +40,14 @@ module.exports = {
      * to localhost:3000/api/* (where our Express server is running)
      */
     proxy: {
-      '/api/**': {
+      '/routes/**': {
         target: 'http://localhost:3000/',
         secure: false,
       },
-      '/assets/**': {
-        target: 'http://localhost:3000/',
-        secure: false,
-      },
+      // '/assets/**': {
+      //   target: 'http://localhost:3000/',
+      //   secure: false,
+      // },
     },
   },
   module: {
@@ -61,9 +63,9 @@ module.exports = {
         },
       },
       {
-        test: /.(css|scss)$/,
-        exclude: /node_modules/,
-        use: ['style-loader', 'css-loader', 'sass-loader'],
+        test: /\.css$/,
+        // exclude: /node_modules/,
+        use: ['style-loader', 'css-loader']
       },
     ],
   },
