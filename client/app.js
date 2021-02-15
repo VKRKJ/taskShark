@@ -1,54 +1,43 @@
 import React, { Component } from 'react';
-import { DragDropContext } from 'react-beautiful-dnd';
-import Column from './column.js';
-// import './stylesheet/styles.css';
-
-
+import Column from './column';
+import './stylesheet/styles.css';
 
 class App extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      enteredData: [],
+    };
+    
   }
 
-  render() {
-    const ar
-  
-   const design = {
-    gridTemplateColumns: 'repeat(4, 1fr)',
+  componentDidMount() {
+    fetch('/')
+      .then((res) => res.json())
+      .then((data) => this.setState({ enteredData: enteredData.concat(data) }))
+      .catch((err) => console.log('DATA FETCH ERROR'));
+  }
 
-   }
-   
+
+  render() {
+    const columnDisplay = [];
+    const columnName = ['Backlog', 'Sprint', 'To Do', 'Doing', 'Review', 'Done'];
+    for (let i = 0; i < 6; i++) {
+      columnDisplay.push(<Column name={columnName[i]} key={i} />);
+    }
+    //check if column name is "blacklog, if it is, push Card component "
     return (
-      <div className="container" style={{display: "grid", gridTemplateColumns : "1fr 1fr 1fr 1fr 1fr 1fr"}}>
+      <div>
         <h2 id="appName">taskShark</h2>
         <h4 id="title">THAT IS GOING TO BE A TITLE</h4>
-        <div>
-        <Column className="Backlog" />
-        <Column className="Sprint"/>
-        <Column className="To Do"/>
-        <Column className="Doing" />
-        <Column className="Review"/>
-        <Column className="Done"/>
+        <div className="container">
+
+          {columnDisplay}
         </div>
       </div>
+
     );
   }
 }
-
-
-// class Board extends Component {
-   
-//   render (){
-   
-
-
-
-
-//     return(
-//       <div style: 
-
-//     )
-//   }
-// }
 
 export default App;
