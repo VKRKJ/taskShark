@@ -5,15 +5,19 @@ class EachTask extends Component {
     
   render() {
     // taskCreator(newData)
-console.log("hello this is the final props", this.props.finalData)
+// console.log("hello this is the final props", this.props.finalData)
     return (
     <div className = "individualTicket">
+        <div className = 'personTask'>
+       {this.props.finalData.person}
+      </div>
       <div className = 'detailsTask'>
           {this.props.finalData.details}
       </div>
-       <div className = 'personTask'>
-       {this.props.finalData.person}
+      <div className = 'detailsTask'>
+         Task # {this.props.finalData._id}
       </div>
+       
    </div>
 
     );

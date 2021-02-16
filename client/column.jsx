@@ -15,8 +15,8 @@ class Column extends Component {
 
   addItem(e) {
     e.preventDefault();
-    const nameInput = document.getElementById('names').value;
-    const descriptionInput = document.getElementById('description').value;
+    const nameInput = document.getElementById('name-1').value;
+    const descriptionInput = document.getElementById('description-1').value;
     const columnNamed = this.props.columnNumber
     console.log(nameInput);
     console.log(descriptionInput);
@@ -45,6 +45,7 @@ class Column extends Component {
     }
     console.log('all task array', allTaskArray);
 
+
     return (
       <div className="allColumns">
         <h4 className="columnHead">{this.props.name}</h4>
@@ -52,9 +53,9 @@ class Column extends Component {
           <div className="allTasks">
             {allTaskArray}
           </div>
-          <form class="taskBox" onSubmit={this.addItem}>
-            <input id="names" className="name" type="text" placeholder="add your Name here" />
-            <input id="description" className="task" type="text" placeholder="add your task here" />
+          <form className="taskBox" onSubmit={this.addItem}>
+            <input id={'name-'+1} className="name" type="text" placeholder="add your Name here" />
+            <input id= {'description-'+1} className="task" type="text" placeholder="add your task here" />
             <button type="submit" className="button">add Ticket</button>
           </form>
         </div>

@@ -1,6 +1,6 @@
 /* styling for the app class */
 body {
- 
+  background: linear-gradient(rgb(47, 150, 163), rgb(48, 62, 143));
 }
 
 
@@ -10,33 +10,50 @@ body {
 }
 #appName {
   display: flex;
-  justify-content: center;
+  justify-content: left;
+  color: white;
 }
 
 #title{
   display: flex;
   justify-content: center;
+  color: white;
+  font-family: 'Lexend Mega'
+  
 }
 .allColumns{
   display: grid;
-  grid-template-rows: 50px 250px 10px 150px 40px;
+  position: relative;
+  grid-template-rows: repeat(5, 60px);
   grid-template-columns: 200px;
-  border: 1px solid black;
+  border: 1px solid rgb(255, 255, 255);
   height: 500;
   width: 200;
+  text-decoration: underline;
 }
 .columnHead{
   text-align: center;
-  
-  
+  font-family: 'Merienda', cursive;
+  color: white
 }
+
+/* .allTasks {
+  overflow: scroll;
+} */
+
+
 .taskBox {
-  grid-row :4
+  /* grid-row : 4 */
+     /* display: flex;
+     flex-direction: column;
+     align-items: center; */
+  /* position: absolute; */
+  bottom: 0;
 }
 .name{
  
-  margin: 40;
-  width: 150;
+  margin: 10;
+  width: 180;
   height: 20;
 }
 
@@ -56,6 +73,69 @@ body {
   
 }
 .individualTicket{
-  background-color: gray;
-  border: 1px solid black;
+  height: 5.5rem;
+  background-color: rgb(135, 192, 214);
+  border: 1px solid rgb(183, 230, 248);
+  text-align: center;
+  font-family: 'Nanum Pen Script', cursive;
+  font-size:25px;
+  border-radius: 2px;
+  box-shadow: 1px 1px 5px rgba(22, 22, 22, 0.915);
+}
+
+input {
+  text-align: center;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border-radius: 10px;
+  background-color: white;
+  border: 2px solid blue;
+  color: blue;
+  font-family: 'Lexend Mega'
+}
+
+/* button {
+  background-color:white;
+  border: 2px solid blue;
+  color: rgb(0, 62, 134);
+  padding: 15px 40px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 10px;
+  margin: 10px;
+  font-family: 'Lexend Mega';
+  transition-duration: 0.25s;
+}
+
+button:active, button:focus {
+  outline: 0;
+  border: none;
+  outline-style: none;
+}
+
+button:hover {
+  background-color:rgba(34, 36, 148, 0.753);
+  border: 2px solid white;
+  color: white;
+  padding: 6px 25px;
+  border-radius: 10px;
+  font-family: 'Lexend Mega'
+} */
+
+button {
+  display: inline-block;
+  margin: 0 auto;
+  width: 80px;
+}
+
+button:link {
+  text-decoration: none;
+}
+
+.emEmShark {
+  flex: center;
+  
 }
