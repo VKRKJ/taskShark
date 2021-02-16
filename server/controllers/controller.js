@@ -4,12 +4,23 @@ const ticketController = {};
 
 ticketController.addTicket = (req, res, next) => {
   const {
-    details,
-    person,
-    phases,
+    descriptionInput,
+    nameInput,
+    columnNamed
+    // phases,
   } = req.body;
+  console.log('req body is here', req.body);
+  console.log('type of the req.body.descriptionInput', typeof req.body.descriptionInput);
   // stretch add phases to have a specified number instead of 1
-  const queryStringAddTicket = `INSERT INTO tasks (_id, details, person, phases) VALUES (DEFAULT, ${details}, ${person}, ${phases} )`;
+  const queryStringAddTicket = `INSERT INTO tasks (_id, details, person, phases) VALUES (DEFAULT, '${req.body.descriptionInput}', '${req.body.nameInput}', '${req.body.columnNamed}')`;
+
+  // const params = [
+  //   descriptionInput,
+  //   nameInput,
+    
+  // ];
+
+  console.log(queryStringAddTicket);
   db.query(queryStringAddTicket)
     .then((data) => next())
     .catch((err) => next({
@@ -19,10 +30,13 @@ ticketController.addTicket = (req, res, next) => {
 };
 
 ticketController.getAll = (req, res, next) => {
+  console.log("getAll response")
   const queryStringGetAll = 'SELECT * FROM tasks';
   db.query(queryStringGetAll)
     .then((data) => {
+      // console.log('TICKETCONTROLLER DATA.ROWS ---------->', data.rows);
       res.locals.tickets = data.rows;
+      // console.log('TICKETCONTROLLER DATA.ROWS ------>', res.locals.tickets);
       return next();
     })
     .catch((err) => next({

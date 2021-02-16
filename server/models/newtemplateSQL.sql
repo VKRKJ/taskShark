@@ -1,3 +1,4 @@
+-- deletes old table
 DROP TABLE IF EXISTS tasks;
 
 -- not sure if id is needed in tasks
